@@ -1,4 +1,4 @@
-import { useTheme, themes } from "../lib/ThemeContext";
+import { useTheme, themes } from "../../lib/ThemeContext";
 import { BsMoon, BsFillMoonFill } from "react-icons/bs";
 
 function Navbar() {
@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <nav
       style={{ backgroundColor: theme.backgroundColor, color: theme.textColor }}
-      className={`py-8 px-8 flex justify-between justify-items-center`}
+      className="py-8 px-8 flex justify-between justify-items-center drop-shadow-md"
     >
       <h1 className="font-extrabold">Where in the world?</h1>
       <button onClick={toggleTheme} className="flex gap-2 items-center">
