@@ -1,15 +1,30 @@
-import { BsMoon } from "react-icons/bs";
+import { useTheme, themes } from "../lib/ThemeContext";
+import { BsMoon, BsFillMoonFill } from "react-icons/bs";
 
 function Navbar() {
+  const { theme, setTheme, currentTheme, setCurrentTheme } = useTheme();
+
+  const toggleTheme = () => {
+    setTheme(theme === themes.dark ? themes.light : themes.dark);
+    setCurrentTheme(theme === themes.dark ? "light" : "dark");
+  };
+
   return (
-    <nav className="bg-[#ffffff] text-[#111517] py-6 px-8 flex justify-between">
+    <nav
+      style={{ backgroundColor: theme.backgroundColor, color: theme.textColor }}
+      className={`py-8 px-8 flex justify-between justify-items-center`}
+    >
       <h1 className="font-extrabold">Where in the world?</h1>
-      <div className="flex gap-2 items-center">
+      <button onClick={toggleTheme} className="flex gap-2 items-center">
         <div>
-          <BsMoon style={{ display: "inline" }} />
+          {currentTheme === "light" ? (
+            <BsMoon style={{ display: "inline" }} />
+          ) : (
+            <BsFillMoonFill style={{ display: "inline" }} />
+          )}
         </div>
         <div>Dark Mode</div>
-      </div>
+      </button>
     </nav>
   );
 }
