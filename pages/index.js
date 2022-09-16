@@ -1,5 +1,7 @@
+import Page from "../components/Page";
+
 function HomePage() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return <Page title="Rest Countries"></Page>;
 }
 
 export default HomePage;
