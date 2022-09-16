@@ -10,7 +10,7 @@ function Page({ title, children }) {
       <header>
         <Navbar />
       </header>
-      <main>{children}</main>
+      <main className="bg-[#fafafa] h-screen">{children}</main>
     </>
   );
 }
