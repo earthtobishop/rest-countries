@@ -4,19 +4,7 @@ import Page from "../../components/ui/Page";
 import { getCountries, getCountry } from "../../lib/countries";
 import { useTheme } from "../../lib/ThemeContext";
 
-export async function getStaticPaths() {
-  const countries = await getCountries();
-  const paths = countries.map((country) => ({
-    params: { countryName: country.name.toString() }
-  }));
-
-  return {
-    paths,
-    fallback: "blocking"
-  };
-}
-
-export async function getStaticProps({ params: { countryName } }) {
+export async function getServerSideProps({ params: { countryName } }) {
   try {
     const country = await getCountry(countryName);
 
