@@ -1,10 +1,12 @@
 import React from "react";
+import Dropdown from "./Dropdown";
 
 function Input() {
   return (
-    <input
-      type="text"
-      className="
+    <>
+      <input
+        type="text"
+        className="
         form-control
         block
         w-1/4
@@ -22,9 +24,10 @@ function Input() {
         shadow-xl
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
       "
-      id="exampleFormControlInput1"
-      placeholder="Search for a country"
-    />
+        id="exampleFormControlInput1"
+        placeholder="Search for a country"
+      />
+    </>
   );
 }
 

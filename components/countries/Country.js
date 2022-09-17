@@ -4,8 +4,6 @@ import { useTheme } from "../../lib/ThemeContext";
 function Country({ country }) {
   const { theme } = useTheme();
 
-  console.log(country);
-
   return (
     <div
       className="flex flex-col shadow-xl pb-12 hover:shadow-2xl hover:cursor-pointer"
