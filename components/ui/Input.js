@@ -1,7 +1,6 @@
 import React from "react";
-import Dropdown from "./Dropdown";
 
-function Input() {
+function Input({ searchText, setSearchText }) {
   return (
     <>
       <input
@@ -26,6 +25,8 @@ function Input() {
       "
         id="exampleFormControlInput1"
         placeholder="Search for a country"
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
       />
     </>
   );

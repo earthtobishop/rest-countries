@@ -19,6 +19,7 @@ function HomePage({ countries }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [countriesPerPage] = useState(8);
   const [region, setRegion] = useState(null);
+  const [searchText, setSearchText] = useState("");
   const indexOfLastCountry = currentPage * countriesPerPage;
   const indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
   const currentCountries = countries.slice(
@@ -45,13 +46,14 @@ function HomePage({ countries }) {
   return (
     <Page title="Rest Countries">
       <div className="flex justify-between">
-        <Input />
+        <Input searchText={searchText} setSearchText={setSearchText} />
         <Dropdown handleSetRegion={handleSetRegion} />
       </div>
       <CountryList
         countries={
           region ? getCountriesByRegion(countries, region) : currentCountries
         }
+        searchText={searchText}
       />
       <Paginiation nextPage={nextPage} prevPage={prevPage} />
     </Page>
