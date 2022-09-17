@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Navbar from "./Navbar";
-import { useTheme, themes } from "../../lib/ThemeContext";
+import { useTheme } from "../../lib/ThemeContext";
 
 function Page({ title, children }) {
   const { theme } = useTheme();
@@ -18,7 +18,7 @@ function Page({ title, children }) {
           backgroundColor: theme.backgroundColor,
           color: theme.textColor
         }}
-        className="h-screen p-10 py-8"
+        className="p-10 py-8"
       >
         {children}
       </main>
