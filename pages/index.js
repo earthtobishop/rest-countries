@@ -2,6 +2,7 @@ import { useState } from "react";
 import CountryList from "../components/countries/CountryList";
 import Input from "../components/ui/Input";
 import Page from "../components/ui/Page";
+import Paginiation from "../components/ui/Paginiation";
 import { getCountries } from "../lib/countries";
 
 export async function getStaticProps() {
@@ -37,6 +38,7 @@ function HomePage({ countries }) {
     <Page title="Rest Countries">
       <Input />
       <CountryList countries={currentCountries} />
+      <Paginiation nextPage={nextPage} prevPage={prevPage} />
     </Page>
   );
 }
