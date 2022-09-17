@@ -18,7 +18,7 @@ function Page({ title, children }) {
           backgroundColor: theme.backgroundColor,
           color: theme.textColor
         }}
-        className="h-screen p-10"
+        className="h-screen p-10 py-8"
       >
         {children}
       </main>
